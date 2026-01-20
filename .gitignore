@@ -1,0 +1,5 @@
+client
+*.txt
+power_sim
+power_app
+*.json
