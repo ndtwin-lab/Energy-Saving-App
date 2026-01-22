@@ -1,5 +1,5 @@
 client
 *.txt
-power_sim
-power_app
+energy_saving_app
+energy_saving_simulator
 *.json

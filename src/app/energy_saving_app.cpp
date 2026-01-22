@@ -585,7 +585,7 @@ std::string prepare_enable_case_input(json &json2sim, Graph &g, std::unordered_s
 
 void easy_disable_switch(Graph &g, json &json2sim, std::vector<Vertex> &group)
 {
-    static std::string simulator = "power_sim";
+    static std::string simulator = "energy_saving_simulator";
     static std::string version = "1.0";
 
     net::io_context ioc;
@@ -668,7 +668,7 @@ void easy_enable_switch(Graph &g, json &json2sim, std::vector<Vertex> &group)
 
     SPDLOG_LOGGER_INFO(Logger::instance(), "easy_enable_switch");
 
-    static std::string simulator = "power_sim";
+    static std::string simulator = "energy_saving_simulator";
     static std::string version = "1.0";
 
     net::io_context ioc;
