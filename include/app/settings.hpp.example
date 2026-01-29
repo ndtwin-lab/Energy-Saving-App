@@ -9,19 +9,19 @@
 
 namespace fs = std::filesystem;
 
-inline const std::string app_ip = "10.10.10.251";
+inline const std::string app_ip = "localhost";
 inline const uint32_t app_port = 8001;
 inline const std::string app_target = "/result";
 
-inline const std::string ndt_ip = "10.10.10.250";
+inline const std::string ndt_ip = "localhost";
 inline const std::string ndt_port = "8000";
 inline const std::string ndt_target = "/ndt/app_register";
 
-inline const std::string request_manager_ip = "10.10.10.250";
+inline const std::string request_manager_ip = "localhost";
 inline const std::string request_manager_port = "8000";
 inline const std::string request_manager_target_for_app = "/ndt/received_a_simulation_case";
 
-inline const std::string nfs_server_ip = "10.10.10.250";
+inline const std::string nfs_server_ip = "localhost";
 inline const fs::path nfs_mnt_dir = "/mnt/nfs/app";
 
 inline const fs::path input_filename = "input";

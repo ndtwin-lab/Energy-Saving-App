@@ -7,7 +7,16 @@ LOGGER = src/utils/Logger.cpp
 SPDLOG_ACTIVE_LEVEL ?= SPDLOG_LEVEL_TRACE
 SPDLOGFLAGS += -DSPDLOG_ACTIVE_LEVEL=$(SPDLOG_ACTIVE_LEVEL)
 
-all: app sim
+# --- config bootstrap (minimal) ---
+APP_SETTINGS_HPP := include/app/settings.hpp
+APP_SETTINGS_EX  := include/app/settings.hpp.example
+
+$(APP_SETTINGS_HPP):
+	@test -f "$@" || (cp "$(APP_SETTINGS_EX)" "$@" && echo "[GEN] $@ created from $(APP_SETTINGS_EX)")
+
+
+all: $(APP_SETTINGS_HPP) app sim
+
 
 app:
 	g++ $(CXXFLAGS) $(LOGGER) src/app/http.cpp src/common/types.cpp src/app/energy_saving_app.cpp -o energy_saving_app $(BOOSTFLAGS) $(SPDLOGFLAGS)
@@ -18,4 +27,6 @@ sim:
 	cp ./energy_saving_simulator ../Simulation-platform-manager/registered/energy_saving_simulator/1.0/executable
 
 clean:
-	rm -r energy_saving_app energy_saving_simulator
+	rm -f energy_saving_app energy_saving_simulator
+
+
