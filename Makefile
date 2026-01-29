@@ -24,7 +24,7 @@ app:
 sim:
 	g++ $(CXXFLAGS) $(LOGGER) src/common/types.cpp src/sim/max_min_fairness.cpp src/sim/energy_saving_simulator.cpp -o energy_saving_simulator $(BOOSTFLAGS) $(SPDLOGFLAGS) -lssl -lcrypto
 # 	Copy to the resgistered folder under simulation server
-	cp ./energy_saving_simulator ../Simulation-platform-manager/registered/energy_saving_simulator/1.0/executable
+	cp ./energy_saving_simulator ../Simulation-Platform-Manager/registered/energy_saving_simulator/1.0/executable
 
 clean:
 	rm -f energy_saving_app energy_saving_simulator
